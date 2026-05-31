@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Architecture Map - Times Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Figtree', 'sans-serif'],
+                        heading: ['"DM Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        ia: {
+                            bg: '#f8fafc',
+                            // Soft Pastel Palette
+                            header: '#e0f2fe',     // Sky 100
+                            hero: '#ffedd5',       // Orange 100
+                            content: '#dcfce7',    // Green 100
+                            media: '#ffe4e6',      // Rose 100
+                            utility: '#f3e8ff',    // Purple 100
+                            footer: '#f1f5f9',     // Slate 100
+                            // Deep Text Accents for contrast
+                            headerText: '#0369a1', // Sky 700
+                            heroText: '#c2410c',   // Orange 700
+                            contentText: '#15803d',// Green 700
+                            mediaText: '#be123c',  // Rose 700
+                            utilityText: '#7e22ce',// Purple 700
+                            footerText: '#334155'  // Slate 700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            /* Subtle dot pattern for a premium blueprint feel */
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Smooth card hover effects */
+        .ia-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .ia-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto pb-20">
+        
+        <!-- Header -->
+        <header class="mb-12 text-center bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-sm border border-slate-100">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="ph-fill ph-blueprint"></i> IA Map
+            </div>
+            <h1 class="text-3xl md:text-4xl font-heading font-bold text-slate-800 tracking-tight mb-2">Times Now News Redesign</h1>
+            <p class="text-slate-500 font-medium">Simplified Information Architecture Hierarchy</p>
+        </header>
+
+        <!-- Main Structure -->
+        <div class="space-y-12">
+
+            <!-- LEVEL 1: GLOBAL HEADER -->
+            <section class="relative bg-ia-header border border-sky-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-sky-500 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-navigation-arrow"></i> 1. Global Header
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Utilities -->
+                    <div class="ia-card bg-white rounded-2xl p-4 shadow-sm border border-sky-100 col-span-2 md:col-span-4 lg:col-span-2 flex flex-col justify-center">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Utilities & Search</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-50 text-slate-700 text-sm font-semibold px-3 py-2 rounded-lg border border-slate-100">Brand Logo</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-semibold px-3 py-2 rounded-lg border border-slate-100 flex items-center gap-1"><i class="ph ph-magnifying-glass"></i> Search</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-semibold px-3 py-2 rounded-lg border border-slate-100">Login/Register</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-semibold px-3 py-2 rounded-lg border border-slate-100">Date/Weather</span>
+                        </div>
+                    </div>
+
+                    <!-- Primary Nav -->
+                    <div class="ia-card bg-white rounded-2xl p-4 shadow-sm border border-sky-100 col-span-2 md:col-span-4 lg:col-span-4">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Primary Navigation</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-sky-50 text-ia-headerText text-sm font-bold px-4 py-2 rounded-xl border border-sky-100 flex items-center gap-1.5"><i class="ph-fill ph-video-camera"></i> TV</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">LATEST</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">INDIA</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">WORLD</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">BUSINESS</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100 flex items-center gap-1.5"><i class="ph-fill ph-gear"></i> TECH</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">SPORTS</span>
+                            <span class="bg-slate-50 text-slate-700 text-sm font-bold px-4 py-2 rounded-xl border border-slate-100">LIFE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LEVEL 2: HERO & PRIMARY DISCOVERY -->
+            <section class="relative bg-ia-hero border border-orange-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-orange-500 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-star"></i> 2. Hero Section & Discovery
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Lead Story / Live -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-orange-100 lg:col-span-2">
+                        <div class="flex items-center gap-2 text-ia-heroText font-bold mb-4">
+                            <i class="ph-fill ph-monitor-play text-xl"></i> Main Feature / Live Broadcasting
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 h-full flex flex-col items-center justify-center text-slate-400 min-h-[120px]">
+                                <i class="ph ph-play-circle text-3xl mb-1"></i>
+                                <span class="text-xs font-semibold uppercase">Primary Video Player</span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-orange-50 text-ia-heroText text-sm font-semibold px-3 py-2 rounded-lg">Featured Headline / Title</div>
+                                <div class="bg-slate-50 text-slate-600 text-xs px-3 py-2 rounded-lg">Video Carousel Controls (Prev/Next)</div>
+                                <div class="bg-slate-50 text-slate-600 text-xs px-3 py-2 rounded-lg">Live Status Indicator</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Stories -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-orange-100">
+                        <div class="flex items-center gap-2 text-ia-heroText font-bold mb-4">
+                            <i class="ph-fill ph-list-dashes text-xl"></i> Top Stories List
+                        </div>
+                        <div class="space-y-2">
+                            <div class="bg-slate-50 rounded-lg p-3 text-sm font-medium border border-slate-100 flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span> News Item 1 (e.g. RBI Policy)</div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-sm font-medium border border-slate-100 flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span> News Item 2 (e.g. Sensex)</div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-sm font-medium border border-slate-100 flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span> News Item 3</div>
+                            <div class="bg-slate-50 rounded-lg p-3 text-sm font-medium border border-slate-100 flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span> News Item 4</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Breaking Ticker -->
+                    <div class="ia-card bg-white rounded-xl p-3 shadow-sm border border-orange-100 lg:col-span-3 flex items-center gap-3">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">BREAKING</span>
+                        <span class="text-sm font-medium text-slate-700">Scrolling Marquee / Ticker News Content</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- LEVEL 3: CONTENT CATEGORIES & MODULES -->
+            <section class="relative bg-ia-content border border-green-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-green-600 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-squares-four"></i> 3. Core Content Categories
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Horizontal Bands (Span full width inside content) -->
+                    <div class="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                            <div class="text-ia-contentText font-bold mb-3 flex justify-between items-center">
+                                <span>Zoom / Lifestyle</span>
+                                <span class="text-xs bg-green-50 px-2 py-1 rounded">Horizontal Carousel</span>
+                            </div>
+                            <div class="flex gap-3 overflow-hidden opacity-70">
+                                <div class="w-24 h-24 bg-slate-100 rounded-lg border border-slate-200 flex-shrink-0 flex items-center justify-center text-xs text-slate-400">Card</div>
+                                <div class="w-24 h-24 bg-slate-100 rounded-lg border border-slate-200 flex-shrink-0 flex items-center justify-center text-xs text-slate-400">Card</div>
+                                <div class="w-24 h-24 bg-slate-100 rounded-lg border border-slate-200 flex-shrink-0 flex items-center justify-center text-xs text-slate-400">Card</div>
+                            </div>
+                        </div>
+
+                        <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                            <div class="text-ia-contentText font-bold mb-3 flex justify-between items-center">
+                                <span>The Sunday Read</span>
+                                <span class="text-xs bg-green-50 px-2 py-1 rounded">Featured Feature</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-24 h-24 bg-slate-100 rounded-lg border border-slate-200 flex-shrink-0"></div>
+                                <div class="space-y-2 flex-1">
+                                    <div class="h-4 bg-slate-200 rounded w-3/4"></div>
+                                    <div class="h-3 bg-slate-100 rounded w-full"></div>
+                                    <div class="h-3 bg-slate-100 rounded w-5/6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Columns -->
+                    <!-- India -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                        <div class="text-ia-contentText font-bold mb-4 border-b border-green-50 pb-2">India News</div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="font-medium text-slate-700">Headline Article 1</li>
+                            <li class="font-medium text-slate-700">Headline Article 2</li>
+                            <li class="font-medium text-slate-700">Headline Article 3</li>
+                            <li class="text-green-600 text-xs font-bold mt-2 cursor-pointer">View All &rarr;</li>
+                        </ul>
+                    </div>
+
+                    <!-- Business -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                        <div class="text-ia-contentText font-bold mb-4 border-b border-green-50 pb-2">Business</div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="font-medium text-slate-700">Market Update Card</li>
+                            <li class="font-medium text-slate-700">Finance Headline</li>
+                            <li class="font-medium text-slate-700">Economy News</li>
+                            <li class="text-green-600 text-xs font-bold mt-2 cursor-pointer">View All &rarr;</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                        <div class="text-ia-contentText font-bold mb-4 border-b border-green-50 pb-2 flex items-center gap-2"><i class="ph-fill ph-gear"></i> Technology</div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="font-medium text-slate-700 flex items-center gap-2"><div class="w-8 h-8 bg-slate-100 rounded"></div> App/Gadget News</li>
+                            <li class="font-medium text-slate-700 flex items-center gap-2"><div class="w-8 h-8 bg-slate-100 rounded"></div> Startup Funding</li>
+                            <li class="font-medium text-slate-700 flex items-center gap-2"><div class="w-8 h-8 bg-slate-100 rounded"></div> AI Developments</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sports -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-green-100">
+                        <div class="text-ia-contentText font-bold mb-4 border-b border-green-50 pb-2">Sports</div>
+                        <div class="mb-3 bg-slate-800 text-white rounded-lg p-2 text-xs flex justify-between items-center shadow-inner">
+                            <span>IND vs AUS</span>
+                            <span class="font-mono text-green-400 font-bold">245/4</span>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="font-medium text-slate-700">Cricket Match Report</li>
+                            <li class="font-medium text-slate-700">Olympic Qualifier News</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- LEVEL 4: INTERACTIVE & MEDIA -->
+            <section class="relative bg-ia-media border border-rose-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-rose-500 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-play-circle"></i> 4. Interactive & Media Modules
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Debate Studio -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-rose-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-ia-mediaText font-bold text-lg flex items-center gap-2"><i class="ph-fill ph-users-three"></i> Debate Studio</div>
+                            <span class="bg-rose-100 text-rose-700 text-[10px] uppercase font-bold px-2 py-1 rounded">Video Grid</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-slate-100 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden group">
+                                <i class="ph-fill ph-play text-rose-400 text-2xl group-hover:scale-110 transition-transform"></i>
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-[10px] text-white font-medium">Topic 1</div>
+                            </div>
+                            <div class="bg-slate-100 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden group">
+                                <i class="ph-fill ph-play text-rose-400 text-2xl group-hover:scale-110 transition-transform"></i>
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-[10px] text-white font-medium">Topic 2</div>
+                            </div>
+                            <div class="bg-slate-100 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden group">
+                                <i class="ph-fill ph-play text-rose-400 text-2xl group-hover:scale-110 transition-transform"></i>
+                                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-2 text-[10px] text-white font-medium">Topic 3</div>
+                            </div>
+                            <div class="bg-rose-50 rounded-xl aspect-video flex items-center justify-center relative border border-rose-200">
+                                <div class="text-center">
+                                    <div class="text-rose-600 text-sm font-bold flex items-center gap-1 justify-center"><span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> LIVE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fun & Leisure -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-rose-100">
+                        <div class="text-ia-mediaText font-bold text-lg mb-4 flex items-center gap-2"><i class="ph-fill ph-game-controller"></i> Fun & Leisure</div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-orange-50 border border-orange-100 rounded-xl p-4 flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white rounded shadow-sm grid grid-cols-3 grid-rows-3 gap-[1px] p-[1px]">
+                                    <div class="bg-slate-800"></div><div class="bg-white"></div><div class="bg-white"></div>
+                                    <div class="bg-white"></div><div class="bg-slate-800"></div><div class="bg-white"></div>
+                                    <div class="bg-white"></div><div class="bg-white"></div><div class="bg-slate-800"></div>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800">Today's Crossword</div>
+                                    <div class="text-xs text-slate-500">Interactive Game Component</div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-4">
+                                <div class="font-bold text-sm text-slate-800 mb-1">Shayari of the Day</div>
+                                <div class="text-xs text-slate-500 italic">"Text snippet placeholder for daily poem/quote."</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- LEVEL 5: SIDEBAR & UTILITIES -->
+            <section class="relative bg-ia-utility border border-purple-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-purple-600 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-sidebar-simple"></i> 5. Global Utilities & Sidebar
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Personalization -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-purple-100 flex flex-col justify-center items-center text-center">
+                        <i class="ph-duotone ph-coffee text-4xl text-purple-400 mb-3"></i>
+                        <h3 class="font-bold text-ia-utilityText mb-1">Missed Something?</h3>
+                        <p class="text-xs text-slate-500 mb-4">Personalization Flow Entry</p>
+                        <button class="bg-purple-600 text-white text-sm font-bold px-4 py-2 rounded-full w-full hover:bg-purple-700 transition">
+                            Build "Morning Edition"
+                        </button>
+                    </div>
+
+                    <!-- Widgets -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-purple-100 space-y-4">
+                        <div class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Widgets</div>
+                        
+                        <div class="bg-slate-50 rounded-xl p-4 flex justify-between items-center border border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <i class="ph-fill ph-cloud-sun text-2xl text-amber-500"></i>
+                                <span class="font-semibold text-slate-700 text-sm">Weather</span>
+                            </div>
+                            <span class="font-bold text-lg text-slate-800">29°</span>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                            <div class="font-semibold text-slate-700 text-sm mb-2">Voices & Opinion</div>
+                            <div class="text-xs text-slate-500 line-clamp-2">Editorial links and opinion pieces appear here as a list.</div>
+                        </div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="ia-card bg-white rounded-2xl p-5 shadow-sm border border-purple-100 space-y-3">
+                        <div class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Sidebar Links</div>
+                        
+                        <div class="text-sm font-semibold text-slate-700 border-b border-slate-100 pb-2">Trending Topics</div>
+                        <div class="text-sm font-semibold text-slate-700 border-b border-slate-100 pb-2">Most Read Articles</div>
+                        <div class="text-sm font-semibold text-slate-700 border-b border-slate-100 pb-2">Education News Hub</div>
+                        <div class="text-sm font-semibold text-slate-700">Spirituality Content</div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- LEVEL 6: FOOTER -->
+            <section class="relative bg-ia-footer border border-slate-200 rounded-[2rem] p-6 md:p-8 pt-10">
+                <div class="absolute -top-4 left-8 bg-slate-700 text-white px-5 py-1.5 rounded-full font-bold text-sm tracking-wide shadow-md flex items-center gap-2">
+                    <i class="ph-fill ph-frame-corners"></i> 6. Global Footer
+                </div>
+
+                <!-- Newsletter -->
+                <div class="bg-slate-800 rounded-2xl p-6 text-center text-white mb-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Stay Ahead of the Curve</h3>
+                    <p class="text-sm text-slate-400 mb-4">Newsletter Subscription Form</p>
+                    <div class="flex max-w-md mx-auto">
+                        <input type="text" disabled placeholder="Email field..." class="bg-slate-700 rounded-l-lg px-4 py-2 w-full text-sm outline-none border border-slate-600">
+                        <button class="bg-blue-500 rounded-r-lg px-4 py-2"><i class="ph-bold ph-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Footer Links Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">About</div>
+                        <ul class="space-y-2 text-sm font-medium text-slate-600">
+                            <li>About Times Now</li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Company</div>
+                        <ul class="space-y-2 text-sm font-medium text-slate-600">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Service</li>
+                            <li>Feedback</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Sections</div>
+                        <ul class="space-y-2 text-sm font-medium text-slate-600">
+                            <li>Trending</li>
+                            <li>Top News</li>
+                            <li>Top Searches</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Follow Us</div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500"><i class="ph-fill ph-facebook-logo"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500"><i class="ph-fill ph-twitter-logo"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500"><i class="ph-fill ph-instagram-logo"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>
